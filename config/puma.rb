@@ -6,7 +6,7 @@
 #
 require 'yaml'
 port_config = YAML.load(File.read("config/ports.yaml"))
-config_port = port_config['PORT']
+config_port = port_config['port']
 puts "config port #{config_port}"
 threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
 threads threads_count, threads_count
