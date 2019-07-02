@@ -5,8 +5,8 @@
 # and maximum; this matches the default thread size of Active Record.
 #
 require 'yaml'
-port_config = YAML.load(File.read("config/ports.yaml"))
-config_port = port_config['port']
+port_config = YAML.load(File.read("config/server.yaml"))
+config_port = port_config['SERVER']['CONTAINER_PORT']
 puts "config port #{config_port}"
 threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }
 threads threads_count, threads_count
